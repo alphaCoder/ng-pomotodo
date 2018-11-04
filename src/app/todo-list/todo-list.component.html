@@ -1,0 +1,15 @@
+<div class="ui padded one column grid">
+  <div class="column">
+    <button type="button" class="ui primary button" (click)="add()">Add</button>  
+  </div>
+  <div class="column">
+    <div class="ui celled list">
+        <div class="item" *ngFor="let todo of todos">
+            <app-todo-item [todo]="todo"></app-todo-item>
+        </div>  
+    </div>
+  </div>
+  <div class="column">
+      <pomodoro-app></pomodoro-app>
+  </div>
+</div>

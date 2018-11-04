@@ -1,0 +1,19 @@
+<div class="ui card bottom-right">
+    <div class="content">
+        <div class="header">
+            {{toDoubleDigit(minutes)}} : {{toDoubleDigit(seconds)}}
+        </div>
+        <div class="description">
+          Task: {{task}}
+        </div>
+     </div>
+    <div class="extra content">    
+  <div class="ui primary icon buttons">
+      <button class="ui button" (click)="startWork()">
+        <i class="play circle outline icon"></i>
+      </button>
+      <button class="ui button" (click)="stopTimer()">
+        <i class="stop circle outline icon"></i>
+      </button>
+  </div>
+</div>
