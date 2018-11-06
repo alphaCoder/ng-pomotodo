@@ -15,6 +15,15 @@ export class TodoListComponent implements OnInit {
   }
 
   add() {
-    this.todos.push(new Todo());
+    let todo = new Todo();
+    todo.ordinal = this.todos.length;
+    todo.focus = true;
+    this.todos.push(todo);
+  }
+
+  handleEnter(todo: Todo) {
+    if (todo.ordinal === this.todos.length - 1) {
+      this.add();
+    }
   }
 }

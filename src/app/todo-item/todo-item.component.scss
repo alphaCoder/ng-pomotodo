@@ -3,6 +3,9 @@
     display: block; /* For Firefox */
   }
 
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
  .done {
     text-decoration: line-through;
  } 

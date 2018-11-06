@@ -1,18 +1,20 @@
 {
-  "name": "angular-electron",
-  "version": "4.2.2",
-  "description": "Angular 6 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "name": "ng-pomotodo",
+  "version": "0.0.1",
+  "description": "A Pomodoro todo app",
+  "homepage": "http://github.com/alphacoder",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Alpha coder"
   },
   "keywords": [
     "angular",
-    "angular 6",
+    "angular 7",
     "electron",
     "typescript",
-    "sass"
+    "sass",
+    "Pomodor",
+    "Todo",
+    "Pomodoro timer"
   ],
   "main": "main.js",
   "private": true,

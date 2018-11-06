@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../models/todo';
 
 @Component({
@@ -10,6 +10,7 @@ export class TodoItemComponent implements OnInit {
 
   editing: boolean = false;
   @Input() todo: Todo;
+  @Output() onEnter: EventEmitter<Todo> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +18,9 @@ export class TodoItemComponent implements OnInit {
 
   toggle() {
     this.editing = !this.editing;
+  }
+
+  handleKeyUp() {
   }
 }
 
