@@ -5,11 +5,14 @@
   <div class="column">
     <div class="ui celled list">
         <div class="item" *ngFor="let todo of todos">
-            <app-todo-item [todo]="todo" (onEnter)="handleEnter($event)"></app-todo-item>
+            <app-todo-item [todo]="todo"
+            [isSelectedTask]="todo === selectedTodo" 
+            (onSelectedTask)="handleSelectedTask($event)"
+            (onEnter)="handleEnter($event)"></app-todo-item>
         </div>  
     </div>
   </div>
   <div class="column">
-      <pomodoro-app></pomodoro-app>
+      <pomodoro-app [task]="selectedTodo"></pomodoro-app> 
   </div>
 </div>

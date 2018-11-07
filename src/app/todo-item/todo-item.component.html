@@ -1,11 +1,11 @@
-<div class="ui two column padded grid">
+<div class="ui three column padded grid">
   <div class="one wide column" style="max-width: 3%">
     <i class="circle outline large icon" *ngIf="!todo.done" 
         (click)="(todo.text && todo.text.length > 0) && todo.done = !todo.done"></i>
     <i class="check circle large green icon" *ngIf="todo.done" 
       (click)="todo.done = !todo.done"></i>  
   </div>
-  <div class="fifteen wide column">
+  <div class="fourteen wide column">
     <div contenteditable="true" 
       [class.done] ="todo.done && todo.text && todo.text.length > 0"
        placeholder="Enter text here..."
@@ -13,6 +13,10 @@
       (input)="todo.text=$event.target.textContent" 
       (keyup.enter)="handleKeyUp($event)">
     </div>
+  </div>
+  <div class="one wide column">
+    <i class="stopwatch large icon" [class.green]="isSelectedTask" 
+      (click)="bindToPomodoro()"></i>
   </div> 
 </div>
 

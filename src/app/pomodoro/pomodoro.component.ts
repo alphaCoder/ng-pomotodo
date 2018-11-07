@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from '../models/todo';
+import 'ion-sound';
+declare var ion: any;
 
 @Component({
   selector: 'pomodoro-app',
@@ -6,19 +9,34 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './pomodoro.component.html',
 })
 
-export class PomodoroComponent {
+export class PomodoroComponent implements OnInit {
 
-  @Input() task: string = '';
+  @Input() task: Todo;
   started: boolean;
   minutes: number;
   seconds: number;
   fillerIncrement: number;
   fillerHeight: number;
   interval;
-
+  total: number = 0;
+  ion = ion;
   constructor() {
     this.resetVariables(25, 0, false);
     this.init();
+    
+  }
+  ngOnInit() {
+  
+    ion.sound({
+      sounds: [
+          {
+              name: "bell_ring",
+          }
+      ],
+      volume: 1.5,
+      path: "assets/sounds/",
+      preload: true 
+  });
   }
   resetVariables(mins, secs, started) {
     this.minutes = mins;
@@ -28,7 +46,7 @@ export class PomodoroComponent {
     this.fillerHeight = 0;
   }
   startWork() {
-    this.resetVariables(25, 0, true);
+    this.resetVariables(1, 0, true);
   };
   startShortBreak() {
     this.resetVariables(5, 0, true);
@@ -40,7 +58,9 @@ export class PomodoroComponent {
     this.resetVariables(25, 0, false);
   };
   timerComplete() {
+    this.total++;
     this.started = false;
+    ion.sound.play("bell_ring");
   }
   intervalCallback() {
     if (!this.started) return false;

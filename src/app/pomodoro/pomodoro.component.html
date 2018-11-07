@@ -4,15 +4,17 @@
             {{toDoubleDigit(minutes)}} : {{toDoubleDigit(seconds)}}
         </div>
         <div class="description">
-          Task: {{task}}
+          Task: {{task?.text}}
         </div>
+        <i class="stopwatch icon"></i>
+        {{total}} Pomodoros
      </div>
     <div class="extra content">    
   <div class="ui primary icon buttons">
-      <button class="ui button" (click)="startWork()">
+      <button class="ui button" [disabled]="started" (click)="startWork()">
         <i class="play circle outline icon"></i>
       </button>
-      <button class="ui button" (click)="stopTimer()">
+      <button class="ui button" [disabled]="!started" (click)="stopTimer()">
         <i class="stop circle outline icon"></i>
       </button>
   </div>

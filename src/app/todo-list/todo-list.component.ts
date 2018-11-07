@@ -9,6 +9,7 @@ import { Todo } from '../models/todo';
 export class TodoListComponent implements OnInit {
 
   todos: Todo[] = [];
+  selectedTodo: Todo = null;
   constructor() { }
 
   ngOnInit() {
@@ -25,5 +26,9 @@ export class TodoListComponent implements OnInit {
     if (todo.ordinal === this.todos.length - 1) {
       this.add();
     }
+  }
+
+  handleSelectedTask(todo: Todo) {
+    this.selectedTodo = todo;
   }
 }

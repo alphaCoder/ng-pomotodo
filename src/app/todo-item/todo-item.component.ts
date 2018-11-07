@@ -9,8 +9,10 @@ import { Todo } from '../models/todo';
 export class TodoItemComponent implements OnInit {
 
   editing: boolean = false;
+  @Input() isSelectedTask: boolean = false;
   @Input() todo: Todo;
   @Output() onEnter: EventEmitter<Todo> = new EventEmitter();
+  @Output() onSelectedTask: EventEmitter<Todo> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +23,11 @@ export class TodoItemComponent implements OnInit {
   }
 
   handleKeyUp() {
+  }
+  bindToPomodoro() {
+    if (!this.isSelectedTask) {
+      this.onSelectedTask.emit(this.todo);
+    }
   }
 }
 
