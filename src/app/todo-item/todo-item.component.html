@@ -11,7 +11,7 @@
        placeholder="Enter text here..."
        [textContent]="todo.text"
       (input)="todo.text=$event.target.textContent" 
-      (keyup.enter)="handleKeyUp($event)">
+      (keyup.enter)="handleKeyUp()">
     </div>
   </div>
   <div class="one wide column">

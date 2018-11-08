@@ -46,7 +46,7 @@ export class PomodoroComponent implements OnInit {
     this.fillerHeight = 0;
   }
   startWork() {
-    this.resetVariables(1, 0, true);
+    this.resetVariables(25, 0, true);
   };
   startShortBreak() {
     this.resetVariables(5, 0, true);
