@@ -26,7 +26,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/semantic-ui-css/semantic.min.css"
+              "node_modules/semantic-ui-css/semantic.min.css",
+              "node_modules/dragula/dist/dragula.min.css"
             ],
             "scripts": [
               "node_modules/ion-sound/js/ion.sound.min.js"

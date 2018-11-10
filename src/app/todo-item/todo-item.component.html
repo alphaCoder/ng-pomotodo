@@ -5,10 +5,10 @@
     <i class="check circle large green icon" *ngIf="todo.done" 
       (click)="todo.done = !todo.done"></i>  
   </div>
-  <div class="fourteen wide column">
+  <div class="twelve wide column">
     <div contenteditable="true" 
       [class.done] ="todo.done && todo.text && todo.text.length > 0"
-       placeholder="Enter text here..."
+       placeholder="Add task..."
        [textContent]="todo.text"
       (input)="todo.text=$event.target.textContent" 
       (keyup.enter)="handleKeyUp()">

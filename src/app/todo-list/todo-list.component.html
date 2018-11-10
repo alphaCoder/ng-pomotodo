@@ -28,7 +28,7 @@
           <button type="button" class="ui primary button" (click)="add()">Add</button>
         </div>
         <div class="column">
-          <div class="ui celled list">
+          <div class="ui celled list" dragula="TODOS" [(dragulaModel)]="todosByCategory[selectedCategory]">
             <div class="item" *ngFor="let todo of todosByCategory[selectedCategory]">
               <app-todo-item [todo]="todo" [isSelectedTask]="todo === selectedTodo" (onSelectedTask)="handleSelectedTask($event)"
                 (onEnter)="handleEnter($event)"></app-todo-item>

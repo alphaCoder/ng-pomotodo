@@ -61,6 +61,7 @@ export class TodoListComponent implements OnInit {
   handleSelectedTask(todo: Todo) {
     this.selectedTodo = todo;
   }
+  
   setSelectedCategory(categoryName) {
     this.selectedCategory = categoryName;
   }

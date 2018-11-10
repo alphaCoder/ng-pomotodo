@@ -82,3 +82,5 @@ import 'zone.js/dist/zone-mix';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+(window as any).global = window;

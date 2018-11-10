@@ -22,6 +22,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { PomodoroComponent } from './pomodoro/pomodoro.component';
 
+import { DragulaModule } from 'ng2-dragula';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: (HttpLoaderFactory),
         deps: [HttpClient]
       }
-    })
+    }),
+    DragulaModule.forRoot()
   ],
   providers: [ElectronService],
   bootstrap: [AppComponent]
