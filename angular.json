@@ -29,8 +29,6 @@
               "node_modules/semantic-ui-css/semantic.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/semantic-ui-css/semantic.min.js",
               "node_modules/ion-sound/js/ion.sound.min.js"
             ]
           },
