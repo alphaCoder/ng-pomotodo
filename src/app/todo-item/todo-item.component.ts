@@ -22,7 +22,9 @@ export class TodoItemComponent implements OnInit {
     this.editing = !this.editing;
   }
 
-  handleKeyUp() {
+  handleKeyUp(e: Event) {
+    event.preventDefault();
+    this.onEnter.emit(this.todo);
   }
   bindToPomodoro() {
     if (!this.isSelectedTask) {

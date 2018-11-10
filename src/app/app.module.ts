@@ -23,6 +23,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { PomodoroComponent } from './pomodoro/pomodoro.component';
 
 import { DragulaModule } from 'ng2-dragula';
+import { FocusInputDirective } from './focus-input.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     TodoListComponent,
     TodoItemComponent,
-    PomodoroComponent
+    PomodoroComponent,
+    FocusInputDirective
   ],
   imports: [
     BrowserModule,

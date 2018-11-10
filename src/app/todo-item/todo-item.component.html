@@ -6,12 +6,10 @@
       (click)="todo.done = !todo.done"></i>  
   </div>
   <div class="twelve wide column">
-    <div contenteditable="true" 
-      [class.done] ="todo.done && todo.text && todo.text.length > 0"
-       placeholder="Add task..."
-       [textContent]="todo.text"
-      (input)="todo.text=$event.target.textContent" 
-      (keyup.enter)="handleKeyUp()">
+    <div class="ui transparent fluid input" 
+      [class.done] ="todo.done && todo.text && todo.text.length > 0">
+        <input type="text" (keydown.enter)="handleKeyUp($event)" [autofocus]="true"
+           [(ngModel)]="todo.text" placeholder="Add task...">
     </div>
   </div>
   <div class="one wide column">

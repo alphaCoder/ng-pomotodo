@@ -8,7 +8,8 @@
     <div class="item">
       <div class="content">
         <div class="ui action input">
-            <input type="text" [(ngModel)] ="categoryName" placeholder="Add category...">
+            <input type="text" [(ngModel)] ="categoryName" (keydown.enter)="addCategory()" 
+            placeholder="Add category...">
             <button class="ui primary icon button" (click)="addCategory()">
               <i class="plus icon"></i>
             </button>
