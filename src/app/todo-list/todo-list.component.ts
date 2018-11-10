@@ -61,8 +61,13 @@ export class TodoListComponent implements OnInit {
   handleSelectedTask(todo: Todo) {
     this.selectedTodo = todo;
   }
-  
+
   setSelectedCategory(categoryName) {
     this.selectedCategory = categoryName;
+  }
+
+  handleOnDeleteTodo(todo: Todo) {
+    let index = this.todosByCategory[this.selectedCategory].indexOf(todo);
+    this.todosByCategory[this.selectedCategory].splice(index, 1);
   }
 }

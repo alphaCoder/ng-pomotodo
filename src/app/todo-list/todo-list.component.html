@@ -32,7 +32,7 @@
           <div class="ui celled list" dragula="TODOS" [(dragulaModel)]="todosByCategory[selectedCategory]">
             <div class="item" *ngFor="let todo of todosByCategory[selectedCategory]">
               <app-todo-item [todo]="todo" [isSelectedTask]="todo === selectedTodo" (onSelectedTask)="handleSelectedTask($event)"
-                (onEnter)="handleEnter($event)"></app-todo-item>
+                (onEnter)="handleEnter($event)" (onDeleteTodo)="handleOnDeleteTodo($event)"></app-todo-item>
             </div>
           </div>
         </div>

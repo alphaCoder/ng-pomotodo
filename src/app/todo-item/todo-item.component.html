@@ -12,9 +12,16 @@
            [(ngModel)]="todo.text" placeholder="Add task...">
     </div>
   </div>
-  <div class="one wide column">
-    <i class="stopwatch large icon" [class.green]="isSelectedTask" 
-      (click)="bindToPomodoro()"></i>
+  <div class="two wide column">
+      <div class="ui mini basic compact icon buttons">
+          <button class="ui compact button">
+            <i class="trash icon" (click)="deleteTodo()"></i>
+          </button>
+          <button class="ui compact button">
+              <i class="stopwatch icon" [class.green]="isSelectedTask" 
+              (click)="bindToPomodoro()"></i>
+          </button>
+      </div>
   </div> 
 </div>
 

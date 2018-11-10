@@ -13,6 +13,8 @@ export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() onEnter: EventEmitter<Todo> = new EventEmitter();
   @Output() onSelectedTask: EventEmitter<Todo> = new EventEmitter();
+  @Output() onDeleteTodo: EventEmitter<Todo> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -26,10 +28,15 @@ export class TodoItemComponent implements OnInit {
     event.preventDefault();
     this.onEnter.emit(this.todo);
   }
+
   bindToPomodoro() {
     if (!this.isSelectedTask) {
       this.onSelectedTask.emit(this.todo);
     }
+  }
+
+  deleteTodo() {
+    this.onDeleteTodo.emit(this.todo);
   }
 }
 
