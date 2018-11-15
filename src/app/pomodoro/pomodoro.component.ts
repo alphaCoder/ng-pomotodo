@@ -46,6 +46,7 @@ export class PomodoroComponent implements OnInit {
     this.started = started;
     this.fillerIncrement = 200 / (this.minutes * 60);
     this.fillerHeight = 0;
+    this.pomodoroTimerService.setTime(`${this.toDoubleDigit(this.minutes)} : ${this.toDoubleDigit(this.seconds)}`);
   }
 
   startWork() {
